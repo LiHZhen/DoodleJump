@@ -19,6 +19,8 @@ public class PlayerMove : MonoBehaviour
     void OnEnable()
     {
         isDead = false;
+        transform.position=new Vector3(0,-0.873f,4);
+        PlayUi.instance.source = 0;
     }
 	void Start ()
     {
@@ -40,7 +42,7 @@ public class PlayerMove : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Respawn" && isDown)
+        if (other.tag == "Respawn" && isDown)//踩到踏板
         {
             if (jump)
             {
@@ -49,7 +51,22 @@ public class PlayerMove : MonoBehaviour
                 jump = false;
             }
         }
-        else if (other.tag == "Monster")
+        else if(other.tag=="Monster"&& !isDown)//撞到怪物
+        {
+            Time.timeScale = 0;
+            isDead = true;
+            Debug.Log(1);
+        }
+        else if(other.tag=="Monster"&& isDown)//踩到怪物
+        {
+            if (jump)
+            {
+                rig.velocity = Vector3.zero;
+                rig.AddForce(Vector3.up * 700);
+                jump = false;
+            }
+        }
+        else if (other.name == "Bottom")//踩到底部
         {
             Time.timeScale = 0;
             isDead = true;

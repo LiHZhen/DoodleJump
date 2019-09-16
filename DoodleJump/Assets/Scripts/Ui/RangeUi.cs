@@ -13,6 +13,8 @@ public class RangeUi : BaseUi
         base.InitUiOnAwake();
         backBtn = GameTool.GetTheChildComponent<Button>(gameObject, "BackBtn");
         backBtn.onClick.AddListener(ToBackClick);
+
+
     }
     protected override void InitDataOnAwake()
     {

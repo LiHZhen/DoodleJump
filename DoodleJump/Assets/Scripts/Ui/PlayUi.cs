@@ -37,7 +37,7 @@ public class PlayUi : BaseUi {
         backBtn2 = GameTool.GetTheChildComponent<Button>(gameObject, "BackToMenuBtn");
         returnBtn= GameTool.GetTheChildComponent<Button>(gameObject, "ReturnBtn");
         sourceText = GameTool.GetTheChildComponent<Text>(gameObject, "SourceText");
-        endWindow = GameTool.FindTheChild(gameObject, "OverWindow").gameObject;
+        endWindow = GameTool.FindTheChild(gameObject, "EndWindow").gameObject;
     }
     protected override void InitDataOnAwake()
     {
@@ -68,7 +68,14 @@ public class PlayUi : BaseUi {
 
     private void ToReturnGame()
     {
+        PlayerMove.isDead = false;
+        endWindow.SetActive(false);
+
         SceneManager.LoadScene(1);
+        Time.timeScale = 1;
+        source = 0;
+        highText.text = source.ToString();
+        //Debug.Log(source);
     }
 
     private void GoOnBtnClick()
@@ -86,6 +93,9 @@ public class PlayUi : BaseUi {
     protected override void ToBackClick()
     {
         base.ToBackClick();
+        PlayerMove.isDead = false;
+        endWindow.SetActive(false);
+
         SceneManager.LoadScene(0);
     }
 	void Update ()
@@ -98,12 +108,13 @@ public class PlayUi : BaseUi {
         if ((int) ((cameraTransform.position.y) * 10) > source)
         {
             source = (int)((cameraTransform.position.y) * 10);
+            sourceText.text = source.ToString();
         }
         highText.text = "High:" + source;
 
         if (PlayerMove.isDead == true)
         {
-
+            endWindow.SetActive(true);
         }
     }
 }

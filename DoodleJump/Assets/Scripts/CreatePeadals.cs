@@ -132,7 +132,7 @@ public class CreatePeadals : MonoBehaviour {
             maxY = minY;
             if (PlayUi.instance.source > hardSource*6)
             {
-                Time.timeScale = 1.2f;
+                Time.timeScale = 1.1f;
             }
         }
         for (int i = 0; i < pedalCount; i++)
