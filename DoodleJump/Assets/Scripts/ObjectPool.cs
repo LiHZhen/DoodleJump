@@ -41,7 +41,6 @@ public class ObjectPool : MonoBehaviour
             o=list[0] as Object;
             list.RemoveAt(0);
 
-
             (o as GameObject).SetActive(true);
             (o as GameObject).transform.position = position;
             (o as GameObject).transform.rotation = quaternion;

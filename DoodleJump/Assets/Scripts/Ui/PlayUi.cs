@@ -9,7 +9,7 @@ public class PlayUi : BaseUi {
 
     private Transform cameraTransform;
     private Text highText;
-    public float source;
+    public int source;
     public static PlayUi instance;
 
     private Button stopBtn;
@@ -114,7 +114,9 @@ public class PlayUi : BaseUi {
 
         if (PlayerMove.isDead == true)
         {
+            RangeManager.Instance.CheckoutRange(source);
             endWindow.SetActive(true);
+            PlayerMove.isDead = false;
         }
     }
 }
