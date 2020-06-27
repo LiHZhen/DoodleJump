@@ -37,7 +37,7 @@ public class CreatePeadal3 : MonoBehaviour
     {
         createX = Random.Range(-3f, 3f);
         createY = Random.Range(y+2, y-2);
-        GameObject createTab = Instantiate(Pedal3, new Vector3(createX, createY, player.transform.position.z), Quaternion.identity);
+        GameObject createTab = Instantiate(Pedal3, new Vector3(createX, createY, player.transform.position.z+0.5f), Quaternion.identity);
         createTab.transform.parent = transform;
     }
 }

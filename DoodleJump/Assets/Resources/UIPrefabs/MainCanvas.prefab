@@ -37,7 +37,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224515112461198954}
-  - component: {fileID: 114920324852993354}
+  - component: {fileID: 114428161388000020}
+  - component: {fileID: 114519836432133738}
   m_Layer: 5
   m_Name: UnitySingletonObj
   m_TagString: Untagged
@@ -75,6 +76,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114428161388000020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1507522120856356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b742c74545a6aff418401ccc7afbfa83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114498859059394832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -91,6 +103,28 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114519836432133738
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1507522120856356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 160d98faa3a4b9b448d3212da271dc6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!114 &114884260227815722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,17 +146,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114920324852993354
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1507522120856356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b742c74545a6aff418401ccc7afbfa83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!223 &223126901033626986
 Canvas:
   m_ObjectHideFlags: 1
